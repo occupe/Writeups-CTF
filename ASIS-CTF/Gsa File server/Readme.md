@@ -72,6 +72,6 @@ so the idea is to read /etc/samba/smb.conf to get secret dir filename which is s
 ![alt text](https://raw.githubusercontent.com/occupe/Writeups-CTF/master/ASIS-CTF/Gsa%20File%20server/images/10.PNG)
 
 and all we have to do now is the grab the file and get the FLAG  
-![alt text](https://raw.githubusercontent.com/occupe/Writeups-CTF/master/ASIS-CTF/Gsa%20File%20server/images/12.PNG) 
+![alt text](https://raw.githubusercontent.com/occupe/Writeups-CTF/master/ASIS-CTF/Gsa%20File%20server/images/11.PNG) 
 
 the flag  ASIS{Vuln_web_appZ_plus_misc0nfig_eQ_dis4st3R!}  
